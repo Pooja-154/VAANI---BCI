@@ -6,34 +6,51 @@ This project was built for the ***"Building for Bharat with the Power of GenAI"*
 ## How It Works
 The application demonstrates a two-step process:
 
-**Intent Simulation**: The user selects a basic human intent (e.g., "Thirsty, Water"). The application then simulates the corresponding EEG feature data that a real BCI device would capture.
+**Intent Simulation:** The user selects a basic human intent (e.g., "Thirsty, Water"). The application's backend then simulates the corresponding EEG feature data that a real BCI device would capture.
 
-**Decoding & Vocalization**: The application takes the simulated EEG data, decodes it back into the original intent, and uses a generative AI model (simulated via a local cache) to convert the simple intent into a natural, human-like sentence. This sentence is then spoken aloud using the browser's text-to-speech engine.
+**Decoding & Vocalization:** The backend takes the simulated EEG data, decodes it back into the original intent using a machine learning model, and uses a generative AI model (simulated via a local cache) to convert the simple intent into a natural, human-like sentence. This sentence and a generated audio file are then sent back to the frontend to be displayed and played.
 
 ## Tech Stack
-This project uses a combination of technologies to simulate the full BCI pipeline in a web browser:
+**Backend:** Python, Flask
 
-**Frontend:** HTML5, CSS3, JavaScript (ES6)
+**Machine Learning:** Pandas, Scikit-learn, Joblib
 
-**Machine Learning (for development):** Python, Pandas, Scikit-learn
+**Frontend:** HTML5, CSS3, JavaScript
 
-**Web Framework (for development):** Flask
+**Text-to-Speech:** pyttsx3
 
-**Deployment:** Render
+## How to Run Locally
+This project runs as a dynamic web application using a Python Flask server.
 
-##How to Run Locally
-This project is a static website and can be run directly in your browser without needing a Python server.
+### Clone the repository:
 
-1. Clone the repository:
-
-Bash
 git clone https://github.com/your-username/your-repo-name.git
-
-2. Navigate to the project directory:
-Bash
 cd your-repo-name
 
-3. Open index.html:
-Simply open the index.html file in your favorite web browser (like Chrome, Firefox, or Edge). You can do this by double-clicking the file in your file explorer.
+### Set up a Virtual Environment:
+It is highly recommended to use a virtual environment to manage project dependencies.
 
-That's it! The application will run entirely in your browser.
+### Create the virtual environment
+python -m venv venv
+
+### Activate it (on Windows)
+.\venv\Scripts\activate
+
+### Activate it (on macOS/Linux)
+source venv/bin/activate
+
+**Install Dependencies:**
+Install all the required Python packages using the requirements.txt file.
+
+pip install -r requirements.txt
+
+**Run the Flask Application:**
+Once the dependencies are installed, you can start the web server.
+
+python app.py
+
+**Open in Browser:**
+Open your web browser and navigate to the following address:
+http://127.0.0.1:5000
+
+The application should now be running locally on your machine.
