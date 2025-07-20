@@ -1,7 +1,7 @@
 # Vaani - Brain-Computer Interface (BCI)  
 Vaani (from Sanskrit: voice) is an MVP concept for a Brain-Computer Interface designed to give a voice to individuals with severe motor disabilities like ALS and Locked-in Syndrome. This project demonstrates a complete pipeline from thought to speech, simulating how EEG signals can be decoded into intents and then vocalized using modern technology.
 
-This project was built for the "Building for Bharat with the Power of GenAI" theme, showcasing how advanced technology can be adapted to meet diverse needs.
+This project was built for the ***"Building for Bharat with the Power of GenAI"*** theme, showcasing how advanced technology can be adapted to meet diverse needs.
 
 ## How It Works  
 The application demonstrates a two-step process:
