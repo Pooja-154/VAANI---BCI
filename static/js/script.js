@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p><strong>Generated Sentence:</strong> ${data.generated_sentence}</p>
                     </div>
                 `;
+                console.log("Audio Path:", data.audio_path);
                 if (data.audio_path) {
                     resultsHTML += `
                         <div class="result-box">
