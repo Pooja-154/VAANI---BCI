@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="result-box">
                             <p><strong>Audio Output 🔊:</strong></p>
                             <audio controls autoplay>
-                                <source src="${data.audio_path}" type="audio/mpeg">
+                                <source src="/${data.audio_path}" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
