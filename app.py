@@ -130,7 +130,9 @@ def decode_process():
 
         generated_sentence = get_genai_sentence(decoded_intent)
         audio_path = text_to_speech(generated_sentence)
-
+        print("Generated sentence:", generated_sentence)
+        print("Audio path:", audio_path)
+        
         return jsonify({
             'success': True,
             'decoded_intent': decoded_intent,
