@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaani - Brain-Computer Interface (BCI)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header class="app-header">
+            <h1><span class="brand-name">Vaani</span> - Brain-Computer Interface (BCI)</h1>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Vaani Logo" class="logo">
+        </header>
+        
+        <p>Building for Bharat with the Power of GenAI</p>
+
+        <div class="main-content">
+            <div class="box">
+                <h2>1. Intent Simulation (Input)</h2>
+                <p>Simulate a person's thought by selecting an intent.</p>
+                <form id="generate-form">
+                    <select id="intent-select" name="intent" required>
+                        <option value="" disabled selected>Choose from below</option>
+                        {% for intent in intents %}
+                            <option value="{{ intent }}">{{ intent }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Generate EEG Signals</button>
+                </form>
+                <div class="loader" id="loader1"></div>
+                <div id="features-display" class="result-box" style="display:none;">
+                    <strong>Simulated EEG Features:</strong>
+                    <div class="features-display-box"></div>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>2. BCI Decoding & Speech (Output)</h2>
+                <p>The BCI processes the EEG data to decode the intent and generate a natural language request.</p>
+                <label for="eeg-input-box">Generated EEG Data:</label>
+                <textarea id="eeg-input-box" readonly placeholder="EEG data will appear here..."></textarea>
+                <button id="decode-button" disabled>Decode Intent</button>
+                <div class="loader" id="loader2"></div>
+                <div id="results-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
