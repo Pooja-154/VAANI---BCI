@@ -8,7 +8,7 @@ import time
 import random
 import json
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 
 print("Loading model and data...")
 model = joblib.load('eeg_model.joblib')
@@ -89,10 +89,12 @@ def text_to_speech(text):
             engine.setProperty('voice', voices[1].id) 
 
         engine.setProperty('rate', 150)
-        speech_file = f"static/output_{int(time.time())}.mp3"
+        filename = f"output_{int(time.time())}.mp3"
+        speech_file = os.path.join("static", filename)
         engine.save_to_file(text, speech_file)
         engine.runAndWait()
-        return f"/static/{speech_file}"
+        return f"/static/{filename}"
+
     except Exception as e:
         print(f"Error in text-to-speech: {e}")
         return None
