@@ -92,7 +92,7 @@ def text_to_speech(text):
         speech_file = f"static/output_{int(time.time())}.mp3"
         engine.save_to_file(text, speech_file)
         engine.runAndWait()
-        return speech_file
+        return f"/static/{speech_file}"
     except Exception as e:
         print(f"Error in text-to-speech: {e}")
         return None
